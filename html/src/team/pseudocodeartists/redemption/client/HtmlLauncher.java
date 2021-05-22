@@ -1,9 +1,9 @@
-package com.mygdx.game.client;
+package team.pseudocodeartists.redemption.client;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.mygdx.game.Redemption;
+import team.pseudocodeartists.redemption.Redemption;
 
 public class HtmlLauncher extends GwtApplication {
 

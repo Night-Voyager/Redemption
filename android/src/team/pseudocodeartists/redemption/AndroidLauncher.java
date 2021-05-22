@@ -1,10 +1,10 @@
-package com.mygdx.game;
+package team.pseudocodeartists.redemption;
 
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.mygdx.game.Redemption;
+import team.pseudocodeartists.redemption.Redemption;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
