@@ -4,9 +4,12 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
+import team.pseudocodeartists.redemption.util.CameraHelper;
 
 public class WorldController extends InputAdapter {
     public static final String TAG = WorldController.class.getName();
+
+    public CameraHelper cameraHelper;
 
     public WorldController() {
         init();
@@ -14,10 +17,12 @@ public class WorldController extends InputAdapter {
 
     private void init() {
         Gdx.input.setInputProcessor(this);
+        cameraHelper = new CameraHelper();
     }
 
     public void update(float deltaTime) {
         handleDesktopInput(deltaTime);
+        cameraHelper.update(deltaTime);
     }
 
     @Override

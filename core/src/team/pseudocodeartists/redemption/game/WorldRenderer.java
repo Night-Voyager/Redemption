@@ -23,7 +23,8 @@ public class WorldRenderer implements Disposable {
     }
 
     public void render() {
-
+        worldController.cameraHelper.applyTo(camera);
+        batch.setProjectionMatrix(camera.combined);
     }
 
     public void resize(int width, int height) {
