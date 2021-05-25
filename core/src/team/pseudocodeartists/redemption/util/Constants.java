@@ -5,4 +5,9 @@ public class Constants {
     public static final float VIEWPORT_WIDTH = 5.0f;
     // Visible game world is 5 meters tall
     public static final float VIEWPORT_HEIGHT = 5.0f;
+
+    // Location of resources root
+    public static final String RESOURCES_ROOT = "";
+    // Location of description files for maps
+    public static final String MAPS = RESOURCES_ROOT + "maps/";
 }
