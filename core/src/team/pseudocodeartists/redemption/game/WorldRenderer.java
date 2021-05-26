@@ -31,7 +31,12 @@ public class WorldRenderer implements Disposable {
         worldController.cameraHelper.applyTo(camera);
         batch.setProjectionMatrix(camera.combined);
 
-        mapRenderer.setView(camera);
+        // The following codes have an impact on the camera, the reason needs to be found out
+        float x = camera.position.x - camera.viewportWidth * camera.zoom;
+        float y = camera.position.y - camera.viewportHeight * camera.zoom;
+        float width = camera.viewportWidth * camera.zoom * 2;
+        float height = camera.viewportHeight * camera.zoom * 2;
+        mapRenderer.setView(camera.combined, x, y, width, height);
         mapRenderer.render();
     }
 

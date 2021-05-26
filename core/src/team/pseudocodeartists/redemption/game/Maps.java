@@ -25,7 +25,7 @@ public class Maps implements Disposable {
 
     @Override
     public void dispose() {
-
+        chooseGate.dispose();
     }
 
     public class ChooseGate {
@@ -33,6 +33,10 @@ public class Maps implements Disposable {
 
         public ChooseGate(TmxMapLoader tmxMapLoader) {
             tiledMap = tmxMapLoader.load(Constants.MAPS + "ChooseGate/ChooseGate.tmx");
+        }
+
+        public void dispose() {
+            tiledMap.dispose();
         }
     }
 }
