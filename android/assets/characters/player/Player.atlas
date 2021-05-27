@@ -1,0 +1,69 @@
+
+Player.png
+size: 64,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Sword/Sword
+  rotate: false
+  xy: 1, 35
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+ArmInside(S)/ArmInside(S)
+  rotate: false
+  xy: 1, 85
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+ArmInside(L)/ArmInside(L)
+  rotate: false
+  xy: 55, 46
+  size: 8, 15
+  orig: 8, 15
+  offset: 0, 0
+  index: -1
+ShoeInside/ShoeInside
+  rotate: false
+  xy: 39, 1
+  size: 19, 12
+  orig: 19, 12
+  offset: 0, 0
+  index: -1
+ShoeOutside/ShoeOutside
+  rotate: false
+  xy: 39, 15
+  size: 19, 12
+  orig: 19, 12
+  offset: 0, 0
+  index: -1
+Body/Body
+  rotate: false
+  xy: 35, 35
+  size: 18, 33
+  orig: 18, 33
+  offset: 0, 0
+  index: -1
+Head/Head
+  rotate: false
+  xy: 1, 1
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+ArmOutside(S)/ArmOutside(S)
+  rotate: false
+  xy: 1, 70
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+ArmOutside(L)/ArmOutside(L)
+  rotate: false
+  xy: 55, 29
+  size: 8, 15
+  orig: 8, 15
+  offset: 0, 0
+  index: -1

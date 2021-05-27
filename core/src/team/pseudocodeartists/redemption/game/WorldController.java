@@ -23,6 +23,12 @@ public class WorldController extends InputAdapter {
     public void update(float deltaTime) {
         handleDesktopInput(deltaTime);
         cameraHelper.update(deltaTime);
+
+        Characters.instance.player.getPlayerAnimationState().update(deltaTime);
+        Characters.instance.player.getPlayerAnimationState().apply(
+                Characters.instance.player.getPlayerSkeleton()
+        );
+        Characters.instance.player.getPlayerSkeleton().updateWorldTransform();
     }
 
     @Override

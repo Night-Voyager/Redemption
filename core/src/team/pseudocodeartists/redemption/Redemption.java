@@ -5,6 +5,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
+import team.pseudocodeartists.redemption.game.Characters;
 import team.pseudocodeartists.redemption.game.Maps;
 import team.pseudocodeartists.redemption.game.WorldController;
 import team.pseudocodeartists.redemption.game.WorldRenderer;
@@ -21,8 +22,11 @@ public class Redemption extends ApplicationAdapter {
 	public void create() {
 		// Set Libgdx log level to DEBUG (LOG_NONE or LOG_INFO are more appropriate before publishing)
 		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+
 		// Load maps
 		Maps.instance.init();
+		// Load characters
+		Characters.instance.init();
 
 		// Initialize controller and renderer
 		worldController = new WorldController();
@@ -60,12 +64,14 @@ public class Redemption extends ApplicationAdapter {
 	@Override
 	public void resume() {
 		Maps.instance.init();
+		Characters.instance.init();
 		paused = false;
 	}
 
 	@Override
 	public void dispose() {
 		worldRenderer.dispose();
+		Characters.instance.dispose();
 		Maps.instance.dispose();
 	}
 }

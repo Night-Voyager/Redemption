@@ -8,6 +8,8 @@ public class Constants {
 
     // Location of resources root
     public static final String RESOURCES_ROOT = "";
+    // Location of description files for characters
+    public static final String CHARACTERS = RESOURCES_ROOT + "characters/";
     // Location of description files for maps
     public static final String MAPS = RESOURCES_ROOT + "maps/";
 }

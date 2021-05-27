@@ -1,9 +1,11 @@
 package team.pseudocodeartists.redemption.game;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.utils.Disposable;
+import com.esotericsoftware.spine.SkeletonRenderer;
 import team.pseudocodeartists.redemption.util.Constants;
 
 public class WorldRenderer implements Disposable {
@@ -12,6 +14,9 @@ public class WorldRenderer implements Disposable {
     private WorldController worldController;
 
     private OrthoCachedTiledMapRenderer mapRenderer;
+
+    private SkeletonRenderer skeletonRenderer;
+    private PolygonSpriteBatch polygonBatch;
 
     public WorldRenderer(WorldController worldController) {
         this.worldController = worldController;
@@ -25,11 +30,19 @@ public class WorldRenderer implements Disposable {
         camera.update();
 
         mapRenderer = new OrthoCachedTiledMapRenderer(Maps.instance.chooseGate.tiledMap);
+
+        skeletonRenderer = new SkeletonRenderer();
+        polygonBatch = new PolygonSpriteBatch();
     }
 
     public void render() {
         worldController.cameraHelper.applyTo(camera);
         batch.setProjectionMatrix(camera.combined);
+        polygonBatch.setProjectionMatrix(camera.combined);
+
+        polygonBatch.begin();
+        skeletonRenderer.draw(polygonBatch, Characters.instance.player.getPlayerSkeleton());
+        polygonBatch.end();
 
         // The following codes have an impact on the camera, the reason needs to be found out
         float x = camera.position.x - camera.viewportWidth * camera.zoom;
