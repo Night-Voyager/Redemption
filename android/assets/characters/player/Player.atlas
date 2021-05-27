@@ -20,21 +20,21 @@ ArmInside(S)/ArmInside(S)
   index: -1
 ArmInside(L)/ArmInside(L)
   rotate: false
-  xy: 55, 46
+  xy: 55, 29
   size: 8, 15
   orig: 8, 15
   offset: 0, 0
   index: -1
 ShoeInside/ShoeInside
   rotate: false
-  xy: 39, 1
+  xy: 39, 15
   size: 19, 12
   orig: 19, 12
   offset: 0, 0
   index: -1
 ShoeOutside/ShoeOutside
   rotate: false
-  xy: 39, 15
+  xy: 39, 1
   size: 19, 12
   orig: 19, 12
   offset: 0, 0
@@ -62,7 +62,7 @@ ArmOutside(S)/ArmOutside(S)
   index: -1
 ArmOutside(L)/ArmOutside(L)
   rotate: false
-  xy: 55, 29
+  xy: 55, 46
   size: 8, 15
   orig: 8, 15
   offset: 0, 0

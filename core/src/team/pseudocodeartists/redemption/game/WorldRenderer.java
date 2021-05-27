@@ -40,10 +40,6 @@ public class WorldRenderer implements Disposable {
         batch.setProjectionMatrix(camera.combined);
         polygonBatch.setProjectionMatrix(camera.combined);
 
-        polygonBatch.begin();
-        skeletonRenderer.draw(polygonBatch, Characters.instance.player.getPlayerSkeleton());
-        polygonBatch.end();
-
         // The following codes have an impact on the camera, the reason needs to be found out
         float x = camera.position.x - camera.viewportWidth * camera.zoom;
         float y = camera.position.y - camera.viewportHeight * camera.zoom;
@@ -51,6 +47,10 @@ public class WorldRenderer implements Disposable {
         float height = camera.viewportHeight * camera.zoom * 2;
         mapRenderer.setView(camera.combined, x, y, width, height);
         mapRenderer.render();
+
+        polygonBatch.begin();
+        skeletonRenderer.draw(polygonBatch, Characters.instance.player.getPlayerSkeleton());
+        polygonBatch.end();
     }
 
     public void resize(int width, int height) {

@@ -39,7 +39,12 @@ public class WorldController extends InputAdapter {
 
     @Override
     public boolean keyDown(int keycode) {
-        System.out.println(Keys.toString(keycode));
+        // Player Controls
+        if (keycode == Keys.SPACE)
+            Characters.instance.player.getPlayerAnimationState().setAnimation(0, "Jump(R)", false);
+        if (keycode == Keys.D)
+            Characters.instance.player.getPlayerAnimationState().setAnimation(0, "Walk(R)", true);
+
         return false;
     }
 
@@ -49,21 +54,28 @@ public class WorldController extends InputAdapter {
         if (Gdx.input.isKeyPressed(Keys.A))
             System.out.println('A');
 
+        // Player Controls
+//        if (Gdx.input.isKeyPressed(Keys.SPACE))
+//            Characters.instance.player.getPlayerAnimationState().setAnimation(0, "Jump(R)", false);
+//        if (Gdx.input.isKeyPressed(Keys.D)) {
+//            Characters.instance.player.getPlayerAnimationState().setAnimation(0, "Walk(R)", false);
+//        }
+
         // Camera Controls (move)
-        float cameraMoveSpeed = 5 * deltaTime;
-        float cameraMoveSpeedAccelerationFactor = 5;
-        if (Gdx.input.isKeyPressed(Keys.SHIFT_LEFT))
-            cameraMoveSpeed *= cameraMoveSpeedAccelerationFactor;
-        if (Gdx.input.isKeyPressed(Keys.LEFT))
-            moveCamera(-cameraMoveSpeed, 0);
-        if (Gdx.input.isKeyPressed(Keys.RIGHT))
-            moveCamera(cameraMoveSpeed, 0);
-        if (Gdx.input.isKeyPressed(Keys.UP))
-            moveCamera(0, cameraMoveSpeed);
-        if (Gdx.input.isKeyPressed(Keys.DOWN))
-            moveCamera(0, -cameraMoveSpeed);
-        if (Gdx.input.isKeyPressed(Keys.BACKSPACE))
-            cameraHelper.setPosition(0, 0);
+//        float cameraMoveSpeed = 5 * deltaTime;
+//        float cameraMoveSpeedAccelerationFactor = 5;
+//        if (Gdx.input.isKeyPressed(Keys.SHIFT_LEFT))
+//            cameraMoveSpeed *= cameraMoveSpeedAccelerationFactor;
+//        if (Gdx.input.isKeyPressed(Keys.LEFT))
+//            moveCamera(-cameraMoveSpeed, 0);
+//        if (Gdx.input.isKeyPressed(Keys.RIGHT))
+//            moveCamera(cameraMoveSpeed, 0);
+//        if (Gdx.input.isKeyPressed(Keys.UP))
+//            moveCamera(0, cameraMoveSpeed);
+//        if (Gdx.input.isKeyPressed(Keys.DOWN))
+//            moveCamera(0, -cameraMoveSpeed);
+//        if (Gdx.input.isKeyPressed(Keys.BACKSPACE))
+//            cameraHelper.setPosition(0, 0);
 
         // Camera Controls (zoom)
         float cameraZoomSpeed = 1 * deltaTime;
