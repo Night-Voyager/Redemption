@@ -27,36 +27,36 @@ public class Characters implements Disposable {
     }
 
     public class Player {
-        private TextureAtlas playerTextureAtlas;
-        private SkeletonJson playerSkeletonJson;
-        private SkeletonData playerSkeletonData;
-        private Skeleton playerSkeleton;
-        private AnimationStateData playerAnimationStateData;
-        private AnimationState playerAnimationState;
+        private TextureAtlas textureAtlas;
+        private SkeletonJson skeletonJson;
+        private SkeletonData skeletonData;
+        private Skeleton skeleton;
+        private AnimationStateData animationStateData;
+        private AnimationState animationState;
 
         public Player() {
             loadPlayerAssets();
         }
 
         void loadPlayerAssets() {
-            playerTextureAtlas = new TextureAtlas(Gdx.files.internal(Constants.CHARACTERS + "player/Player.atlas"));
-            playerSkeletonJson = new SkeletonJson(playerTextureAtlas);
-            playerSkeletonData = playerSkeletonJson.readSkeletonData(Gdx.files.internal(Constants.CHARACTERS + "player/Player.json"));
-            playerSkeleton = new Skeleton(playerSkeletonData);
-            playerAnimationStateData = new AnimationStateData(playerSkeletonData);
-            playerAnimationState = new AnimationState(playerAnimationStateData);
+            textureAtlas = new TextureAtlas(Gdx.files.internal(Constants.CHARACTERS + "player/Player.atlas"));
+            skeletonJson = new SkeletonJson(textureAtlas);
+            skeletonData = skeletonJson.readSkeletonData(Gdx.files.internal(Constants.CHARACTERS + "player/Player.json"));
+            skeleton = new Skeleton(skeletonData);
+            animationStateData = new AnimationStateData(skeletonData);
+            animationState = new AnimationState(animationStateData);
         }
 
         public void dispose() {
-            playerTextureAtlas.dispose();
+            textureAtlas.dispose();
         }
 
-        public AnimationState getPlayerAnimationState() {
-            return playerAnimationState;
+        public AnimationState getAnimationState() {
+            return animationState;
         }
 
-        public Skeleton getPlayerSkeleton() {
-            return playerSkeleton;
+        public Skeleton getSkeleton() {
+            return skeleton;
         }
     }
 }

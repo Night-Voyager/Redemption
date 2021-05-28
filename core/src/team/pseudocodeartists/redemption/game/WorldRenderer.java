@@ -44,7 +44,7 @@ public class WorldRenderer implements Disposable {
         mapRenderer.render();
 
         polygonBatch.begin();
-        skeletonRenderer.draw(polygonBatch, Characters.instance.player.getPlayerSkeleton());
+        skeletonRenderer.draw(polygonBatch, Characters.instance.player.getSkeleton());
         polygonBatch.end();
     }
 
