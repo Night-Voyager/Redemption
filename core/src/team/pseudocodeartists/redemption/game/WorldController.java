@@ -24,11 +24,9 @@ public class WorldController extends InputAdapter {
         handleDesktopInput(deltaTime);
         cameraHelper.update(deltaTime);
 
-        Characters.instance.player.getAnimationState().update(deltaTime);
-        Characters.instance.player.getAnimationState().apply(
-                Characters.instance.player.getSkeleton()
-        );
-        Characters.instance.player.getSkeleton().updateWorldTransform();
+        CharacterMediator.instance.player.animationState.update(deltaTime);
+        CharacterMediator.instance.player.animationState.apply(CharacterMediator.instance.player.skeleton);
+        CharacterMediator.instance.player.skeleton.updateWorldTransform();
     }
 
     @Override
@@ -41,9 +39,9 @@ public class WorldController extends InputAdapter {
     public boolean keyDown(int keycode) {
         // Player Controls
         if (keycode == Keys.SPACE)
-            Characters.instance.player.getAnimationState().setAnimation(0, "Jump(R)", false);
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Jump(R)", false);
         if (keycode == Keys.D)
-            Characters.instance.player.getAnimationState().setAnimation(0, "Walk(R)", true);
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Walk(R)", true);
 
         return false;
     }

@@ -3,9 +3,8 @@ package team.pseudocodeartists.redemption;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
-import team.pseudocodeartists.redemption.game.Characters;
+import team.pseudocodeartists.redemption.game.CharacterMediator;
 import team.pseudocodeartists.redemption.game.Maps;
 import team.pseudocodeartists.redemption.game.WorldController;
 import team.pseudocodeartists.redemption.game.WorldRenderer;
@@ -26,7 +25,7 @@ public class Redemption extends ApplicationAdapter {
 		// Load maps
 		Maps.instance.init();
 		// Load characters
-		Characters.instance.init();
+		CharacterMediator.instance.init();
 
 		// Initialize controller and renderer
 		worldController = new WorldController();
@@ -64,14 +63,14 @@ public class Redemption extends ApplicationAdapter {
 	@Override
 	public void resume() {
 		Maps.instance.init();
-		Characters.instance.init();
+		CharacterMediator.instance.init();
 		paused = false;
 	}
 
 	@Override
 	public void dispose() {
 		worldRenderer.dispose();
-		Characters.instance.dispose();
+		CharacterMediator.instance.dispose();
 		Maps.instance.dispose();
 	}
 }
