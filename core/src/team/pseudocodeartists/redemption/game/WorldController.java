@@ -31,7 +31,9 @@ public class WorldController extends InputAdapter {
 
     @Override
     public boolean keyUp(int keycode) {
-        System.out.println(Keys.toString(keycode));
+        if (keycode == Keys.D)
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Walk(R)", false);
+
         return false;
     }
 
@@ -42,6 +44,12 @@ public class WorldController extends InputAdapter {
             CharacterMediator.instance.player.animationState.setAnimation(0, "Jump(R)", false);
         if (keycode == Keys.D)
             CharacterMediator.instance.player.animationState.setAnimation(0, "Walk(R)", true);
+        if (keycode == Keys.C)
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Chop(R)", false);
+        if (keycode == Keys.V)
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Stab(R)", false);
+        if (keycode == Keys.B)
+            CharacterMediator.instance.player.animationState.setAnimation(0, "Stab(L)", false);
 
         return false;
     }
