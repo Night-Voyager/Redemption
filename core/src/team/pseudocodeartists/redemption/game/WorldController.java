@@ -39,7 +39,7 @@ public class WorldController extends InputAdapter {
 
     @Override
     public boolean keyDown(int keycode) {
-        // Player Controls
+        // Player Controls (animation)
         if (keycode == Keys.SPACE)
             CharacterMediator.instance.player.animationState.setAnimation(0, "Jump(R)", false);
         if (keycode == Keys.D)
@@ -56,6 +56,24 @@ public class WorldController extends InputAdapter {
 
     private void handleDesktopInput(float deltaTime) {
         if (Gdx.app.getType() != Application.ApplicationType.Desktop) return;
+
+        // Player Controls (move)
+        if (Gdx.input.isKeyPressed(Keys.W))
+            CharacterMediator.instance.player.getSkeleton().setY(
+                    CharacterMediator.instance.player.getSkeleton().getY() + 10
+            );
+        if (Gdx.input.isKeyPressed(Keys.A))
+            CharacterMediator.instance.player.getSkeleton().setX(
+                    CharacterMediator.instance.player.getSkeleton().getX() - 10
+            );
+        if (Gdx.input.isKeyPressed(Keys.S))
+            CharacterMediator.instance.player.getSkeleton().setY(
+                    CharacterMediator.instance.player.getSkeleton().getY() - 10
+            );
+        if (Gdx.input.isKeyPressed(Keys.D))
+            CharacterMediator.instance.player.getSkeleton().setX(
+                    CharacterMediator.instance.player.getSkeleton().getX() + 10
+            );
 
         // Camera Controls (move)
         float cameraMoveSpeed = 5 * deltaTime;
