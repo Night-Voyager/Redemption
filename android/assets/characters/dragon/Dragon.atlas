@@ -1,0 +1,97 @@
+
+Dragon.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+WingsRight/WingsRight
+  rotate: false
+  xy: 47, 1
+  size: 45, 32
+  orig: 45, 32
+  offset: 0, 0
+  index: -1
+Tail/Tail
+  rotate: false
+  xy: 76, 40
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+FootRight/FootRight
+  rotate: false
+  xy: 94, 72
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+LegRightSmall/LegRightSmall
+  rotate: false
+  xy: 1, 43
+  size: 30, 21
+  orig: 30, 21
+  offset: 0, 0
+  index: -1
+LegRightBig/LegRightBig
+  rotate: false
+  xy: 94, 61
+  size: 11, 7
+  orig: 11, 7
+  offset: 0, 0
+  index: -1
+Body/Body
+  rotate: false
+  xy: 47, 35
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+FootLeft/FootLeft
+  rotate: false
+  xy: 107, 58
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+LegLeftSmall/LegLeftSmall
+  rotate: false
+  xy: 76, 61
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+LegLeftBig/LegLeftBig
+  rotate: false
+  xy: 107, 40
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+HandRight/HandRight
+  rotate: false
+  xy: 117, 1
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+HandLeft/HandLeft
+  rotate: false
+  xy: 110, 72
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+WingsLeft/WingsLeft
+  rotate: false
+  xy: 1, 1
+  size: 44, 40
+  orig: 44, 40
+  offset: 0, 0
+  index: -1
+Head/Head
+  rotate: false
+  xy: 94, 1
+  size: 21, 37
+  orig: 21, 37
+  offset: 0, 0
+  index: -1

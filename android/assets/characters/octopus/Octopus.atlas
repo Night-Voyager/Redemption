@@ -1,0 +1,69 @@
+
+Octopus.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ArmBehindSmall/ArmBehindSmall
+  rotate: false
+  xy: 81, 56
+  size: 26, 40
+  orig: 26, 40
+  offset: 0, 0
+  index: -1
+ArmFrontSmall/ArmFrontSmall
+  rotate: false
+  xy: 1, 210
+  size: 45, 36
+  orig: 45, 36
+  offset: 0, 0
+  index: -1
+ArmBehind/ArmBehind
+  rotate: false
+  xy: 62, 152
+  size: 38, 66
+  orig: 38, 66
+  offset: 0, 0
+  index: -1
+ArmFront/ArmFront
+  rotate: false
+  xy: 1, 152
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+BodySec/BodySec
+  rotate: false
+  xy: 65, 1
+  size: 63, 53
+  orig: 63, 53
+  offset: 0, 0
+  index: -1
+BodyMain/BodyMain
+  rotate: false
+  xy: 1, 92
+  size: 78, 58
+  orig: 78, 58
+  offset: 0, 0
+  index: -1
+HandRight/HandRight
+  rotate: false
+  xy: 102, 218
+  size: 54, 21
+  orig: 54, 21
+  offset: 0, 0
+  index: -1
+Handleft/HandLeft
+  rotate: false
+  xy: 102, 152
+  size: 34, 64
+  orig: 34, 64
+  offset: 0, 0
+  index: -1
+Head/Head
+  rotate: false
+  xy: 1, 1
+  size: 62, 89
+  orig: 62, 89
+  offset: 0, 0
+  index: -1
