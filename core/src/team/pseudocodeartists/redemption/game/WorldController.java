@@ -26,8 +26,11 @@ public class WorldController extends InputAdapter {
         cameraHelper.update(deltaTime);
 
         CharacterMediator.instance.player.getAnimationState().update(deltaTime);
+        CharacterMediator.instance.boss.getAnimationState().update(deltaTime);
         CharacterMediator.instance.player.getAnimationState().apply(CharacterMediator.instance.player.getSkeleton());
+        CharacterMediator.instance.boss.getAnimationState().apply(CharacterMediator.instance.boss.getSkeleton());
         CharacterMediator.instance.player.getSkeleton().updateWorldTransform();
+        CharacterMediator.instance.boss.getSkeleton().updateWorldTransform();
     }
 
     @Override
@@ -40,7 +43,7 @@ public class WorldController extends InputAdapter {
 
     @Override
     public boolean keyDown(int keycode) {
-        // Player Controls (animation)
+        // Character Controls (animation)
         if (keycode == Keys.SPACE)
             CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Jump(R)", false);
         if (keycode == Keys.D)
@@ -50,7 +53,10 @@ public class WorldController extends InputAdapter {
         if (keycode == Keys.V)
             CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Stab(R)", false);
         if (keycode == Keys.B)
-            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Stab(L)", false);
+            CharacterMediator.instance.boss.getAnimationState().setAnimation(0, "Wounded(L)", false);
+//            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Stab(L)", false);
+        if (keycode == Keys.X)
+            CharacterMediator.instance.boss.getAnimationState().setAnimation(0, "Death(L)", false);
 
         return false;
     }

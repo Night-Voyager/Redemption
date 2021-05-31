@@ -1,7 +1,9 @@
 package team.pseudocodeartists.redemption.game.character;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.esotericsoftware.spine.*;
+import team.pseudocodeartists.redemption.util.Constants;
 
 public abstract class BaseCharacter implements Character{
     TextureAtlas textureAtlas;
@@ -75,6 +77,17 @@ public abstract class BaseCharacter implements Character{
     public BaseCharacter setAnimationState(AnimationState animationState) {
         this.animationState = animationState;
         return this;
+    }
+
+    @Override
+    public void loadAssets(String characterName) {
+        String path = characterName + '/' + characterName;
+        textureAtlas = new TextureAtlas(Gdx.files.internal(Constants.CHARACTERS + path + ".atlas"));
+        skeletonJson = new SkeletonJson(textureAtlas);
+        skeletonData = skeletonJson.readSkeletonData(Gdx.files.internal(Constants.CHARACTERS + path + ".json"));
+        skeleton = new Skeleton(skeletonData);
+        animationStateData = new AnimationStateData(skeletonData);
+        animationState = new AnimationState(animationStateData);
     }
 
     @Override

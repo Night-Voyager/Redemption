@@ -8,6 +8,7 @@ public class CharacterMediator implements Disposable {
     public static final CharacterMediator instance = new CharacterMediator();
 
     public Player player;
+    public Boss boss;
 
     public CharacterMediator() {
         init();
@@ -15,10 +16,13 @@ public class CharacterMediator implements Disposable {
 
     public void init() {
         player = new Player();
+        boss = new Boss("octopus");
+        boss.getAnimationState().setAnimation(0, "State(L)", true);
     }
 
     @Override
     public void dispose() {
         player.dispose();
+        boss.dispose();
     }
 }
