@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.SkeletonRenderer;
+import team.pseudocodeartists.redemption.game.character.CharacterMediator;
+import team.pseudocodeartists.redemption.game.map.Maps;
 import team.pseudocodeartists.redemption.util.Constants;
 
 public class WorldRenderer implements Disposable {
@@ -44,7 +46,7 @@ public class WorldRenderer implements Disposable {
         mapRenderer.render();
 
         polygonBatch.begin();
-        skeletonRenderer.draw(polygonBatch, CharacterMediator.instance.player.skeleton);
+        skeletonRenderer.draw(polygonBatch, CharacterMediator.instance.player.getSkeleton());
         polygonBatch.end();
     }
 

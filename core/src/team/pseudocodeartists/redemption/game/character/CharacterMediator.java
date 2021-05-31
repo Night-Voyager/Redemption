@@ -1,4 +1,4 @@
-package team.pseudocodeartists.redemption.game;
+package team.pseudocodeartists.redemption.game.character;
 
 import com.badlogic.gdx.utils.Disposable;
 

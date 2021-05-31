@@ -4,8 +4,8 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import team.pseudocodeartists.redemption.game.CharacterMediator;
-import team.pseudocodeartists.redemption.game.Maps;
+import team.pseudocodeartists.redemption.game.character.CharacterMediator;
+import team.pseudocodeartists.redemption.game.map.Maps;
 import team.pseudocodeartists.redemption.game.WorldController;
 import team.pseudocodeartists.redemption.game.WorldRenderer;
 

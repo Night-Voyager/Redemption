@@ -4,6 +4,7 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputAdapter;
+import team.pseudocodeartists.redemption.game.character.CharacterMediator;
 import team.pseudocodeartists.redemption.util.CameraHelper;
 
 public class WorldController extends InputAdapter {
@@ -24,15 +25,15 @@ public class WorldController extends InputAdapter {
         handleDesktopInput(deltaTime);
         cameraHelper.update(deltaTime);
 
-        CharacterMediator.instance.player.animationState.update(deltaTime);
-        CharacterMediator.instance.player.animationState.apply(CharacterMediator.instance.player.skeleton);
-        CharacterMediator.instance.player.skeleton.updateWorldTransform();
+        CharacterMediator.instance.player.getAnimationState().update(deltaTime);
+        CharacterMediator.instance.player.getAnimationState().apply(CharacterMediator.instance.player.getSkeleton());
+        CharacterMediator.instance.player.getSkeleton().updateWorldTransform();
     }
 
     @Override
     public boolean keyUp(int keycode) {
         if (keycode == Keys.D)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Walk(R)", false);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Walk(R)", false);
 
         return false;
     }
@@ -41,15 +42,15 @@ public class WorldController extends InputAdapter {
     public boolean keyDown(int keycode) {
         // Player Controls (animation)
         if (keycode == Keys.SPACE)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Jump(R)", false);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Jump(R)", false);
         if (keycode == Keys.D)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Walk(R)", true);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Walk(R)", true);
         if (keycode == Keys.C)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Chop(R)", false);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Chop(R)", false);
         if (keycode == Keys.V)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Stab(R)", false);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Stab(R)", false);
         if (keycode == Keys.B)
-            CharacterMediator.instance.player.animationState.setAnimation(0, "Stab(L)", false);
+            CharacterMediator.instance.player.getAnimationState().setAnimation(0, "Stab(L)", false);
 
         return false;
     }

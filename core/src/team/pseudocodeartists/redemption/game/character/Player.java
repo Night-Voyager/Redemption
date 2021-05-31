@@ -1,4 +1,4 @@
-package team.pseudocodeartists.redemption.game;
+package team.pseudocodeartists.redemption.game.character;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;

@@ -1,4 +1,4 @@
-package team.pseudocodeartists.redemption.game;
+package team.pseudocodeartists.redemption.game.map;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
