@@ -33,4 +33,6 @@ public interface Character extends Serializable, Disposable {
     BaseCharacter setAnimationState(AnimationState animationState);
 
     void loadAssets(String characterName);
+
+    void update(float deltaTime);
 }

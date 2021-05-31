@@ -91,6 +91,13 @@ public abstract class BaseCharacter implements Character{
     }
 
     @Override
+    public void update(float deltaTime) {
+        this.animationState.update(deltaTime);
+        this.animationState.apply(this.skeleton);
+        this.skeleton.updateWorldTransform();
+    }
+
+    @Override
     public void dispose() {
         textureAtlas.dispose();
     }

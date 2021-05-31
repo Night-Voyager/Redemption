@@ -20,6 +20,12 @@ public class CharacterMediator implements Disposable {
         boss.getAnimationState().setAnimation(0, "State(L)", true);
     }
 
+    public void update(float deltaTime) {
+        player.update(deltaTime);
+        if (boss!=null)
+            boss.update(deltaTime);
+    }
+
     @Override
     public void dispose() {
         player.dispose();

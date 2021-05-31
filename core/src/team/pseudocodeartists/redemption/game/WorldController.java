@@ -25,12 +25,7 @@ public class WorldController extends InputAdapter {
         handleDesktopInput(deltaTime);
         cameraHelper.update(deltaTime);
 
-        CharacterMediator.instance.player.getAnimationState().update(deltaTime);
-        CharacterMediator.instance.boss.getAnimationState().update(deltaTime);
-        CharacterMediator.instance.player.getAnimationState().apply(CharacterMediator.instance.player.getSkeleton());
-        CharacterMediator.instance.boss.getAnimationState().apply(CharacterMediator.instance.boss.getSkeleton());
-        CharacterMediator.instance.player.getSkeleton().updateWorldTransform();
-        CharacterMediator.instance.boss.getSkeleton().updateWorldTransform();
+        CharacterMediator.instance.update(deltaTime);
     }
 
     @Override
