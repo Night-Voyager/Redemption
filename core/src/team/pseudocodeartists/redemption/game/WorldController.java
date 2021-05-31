@@ -102,7 +102,7 @@ public class WorldController extends InputAdapter {
         if (Gdx.input.isKeyPressed(Keys.PERIOD))
             cameraHelper.addZoom(-cameraZoomSpeed);
         if (Gdx.input.isKeyPressed(Keys.SLASH))
-            cameraHelper.setZoom(1);
+            cameraHelper.setZoom(200);
     }
 
     private void moveCamera(float x, float y) {
