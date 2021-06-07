@@ -1,12 +1,11 @@
 package team.pseudocodeartists.redemption.game;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.*;
 
 import java.io.Serializable;
 
-public interface Character extends Serializable, Disposable {
+public interface Character extends Serializable {
 
     TextureAtlas getTextureAtlas();
 

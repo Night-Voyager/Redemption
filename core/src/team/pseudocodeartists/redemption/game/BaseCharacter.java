@@ -1,9 +1,10 @@
 package team.pseudocodeartists.redemption.game;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.utils.Disposable;
 import com.esotericsoftware.spine.*;
 
-public abstract class BaseCharacter implements Character{
+public abstract class BaseCharacter implements Character, Disposable {
     TextureAtlas textureAtlas;
     SkeletonJson skeletonJson;
     SkeletonData skeletonData;

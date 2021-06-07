@@ -8,12 +8,15 @@ import team.pseudocodeartists.redemption.game.CharacterMediator;
 import team.pseudocodeartists.redemption.game.Maps;
 import team.pseudocodeartists.redemption.game.WorldController;
 import team.pseudocodeartists.redemption.game.WorldRenderer;
+import team.pseudocodeartists.redemption.util.MementoCareTaker;
 
 public class Redemption extends ApplicationAdapter {
 	public static final String TAG = Redemption.class.getName();
 
 	private WorldController worldController;
 	private WorldRenderer worldRenderer;
+
+	private MementoCareTaker mementoCareTaker;
 
 	private boolean paused; // for pause or resume event on Android
 
@@ -30,6 +33,10 @@ public class Redemption extends ApplicationAdapter {
 		// Initialize controller and renderer
 		worldController = new WorldController();
 		worldRenderer = new WorldRenderer(worldController);
+
+		// Initialize the memento caretaker
+		mementoCareTaker = new MementoCareTaker();
+
 		// Game world is active on start
 		paused = false;
 	}
@@ -57,13 +64,15 @@ public class Redemption extends ApplicationAdapter {
 
 	@Override
 	public void pause() {
+		mementoCareTaker.pushMemento(CharacterMediator.instance.backup());
 		paused = true;
 	}
 
 	@Override
 	public void resume() {
 		Maps.instance.init();
-		CharacterMediator.instance.init();
+//		CharacterMediator.instance.init();
+		CharacterMediator.instance.restore(mementoCareTaker.popMemento());
 		paused = false;
 	}
 
